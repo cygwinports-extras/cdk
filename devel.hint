@@ -1,0 +1,7 @@
+category: Libs
+requires: cygwin libcdk1 libncurses-devel
+external-source: cdk
+sdesc: "Curses widget library (libdevel)"
+ldesc: "Cdk stands for 'Curses Development Kit' and it currently 
+contains 21 ready to use widgets which facilitate the speedy development 
+of full screen curses programs."

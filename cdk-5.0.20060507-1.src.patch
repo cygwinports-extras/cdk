@@ -1,0 +1,43 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/cdk-5.0-20060507/Makefile.in src/cdk-5.0-20060507/Makefile.in
+--- origsrc/cdk-5.0-20060507/Makefile.in	2006-04-17 18:13:49.000000000 -0500
++++ src/cdk-5.0-20060507/Makefile.in	2008-04-13 23:58:14.453125000 -0500
+@@ -265,7 +265,7 @@
+ all cdklib :: $(DEFAULT)
+ 
+ $(CDKLIB) :: $(OBJECTS)
+-	@echo creating $@; $(LIBTOOL_CREATE) $@ $(LIB_OBJECT)
++	@echo creating $@; $(LIBTOOL_CREATE) $@ $(LIB_OBJECT) -no-undefined $(LIBS)
+ 	@$(RANLIB) $@
+ 
+ cdkshlib $(CDKSHLIB) :: $(CDKSHOBJS)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/cdk-5.0-20060507/configure.in src/cdk-5.0-20060507/configure.in
+--- origsrc/cdk-5.0-20060507/configure.in	2005-12-28 16:41:13.000000000 -0600
++++ src/cdk-5.0-20060507/configure.in	2008-04-14 00:01:55.421875000 -0500
+@@ -2,7 +2,6 @@
+ dnl Process this file with autoconf to produce a configure script for CDK.
+ dnl
+ AC_INIT(include/cdk.h)
+-AC_CONFIG_HEADER(include/cdk_config.h:include/config.hin)
+ 
+ CF_CHECK_CACHE
+ CF_VERSION_INFO(cdk)
+@@ -144,6 +143,7 @@
+ dnl
+ AC_OUTPUT(
+ 	include/cdk_version.h:include/cdk_version.hin
++	include/cdk_config.h:include/config.hin
+ 	Makefile
+ 	cli/Makefile
+ 	examples/Makefile
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/cdk-5.0-20060507/include/config.hin src/cdk-5.0-20060507/include/config.hin
+--- origsrc/cdk-5.0-20060507/include/config.hin	2000-01-17 08:48:19.000000000 -0600
++++ src/cdk-5.0-20060507/include/config.hin	2008-04-14 00:01:33.000000000 -0500
+@@ -5,8 +5,6 @@
+ #ifndef CDK_CONFIG_H
+ #define CDK_CONFIG_H 1
+ 
+-@DEFS@
+-
+ #if !defined(HAVE_LSTAT) && !defined(lstat)
+ #define lstat(f,b) stat(f,b)
+ #endif

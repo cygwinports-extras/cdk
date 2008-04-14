@@ -1,0 +1,14 @@
+DESCRIPTION="Curses Development Kit widget library"
+HOMEPAGE="http://invisible-island.net/cdk/cdk.html"
+SRC_DIR="${PN}-${PV_MAJ_MIN}-${PVP[2]}"
+SRC_URI="ftp://invisible-island.net/cdk/${SRC_DIR}.tgz"
+
+abi=1
+PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel"
+PKG_HINTS="setup lib devel"
+PKG_CONTENTS[0]="usr/share/doc/"
+PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
+PKG_CONTENTS[2]="usr/include/ usr/lib/"
+
+CYGCONF_ARGS="--with-libtool --with-ncurses"
+MAKEOPTS+=" -j1 DOCUMENT_DIR=${D}/usr/share/doc/${P}"
