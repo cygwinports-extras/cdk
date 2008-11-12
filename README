@@ -5,17 +5,17 @@ ready to use widgets which facilitate the speedy development of full
 screen curses programs.
 
 Runtime requirements:
-  cygwin-1.5.25-7
+  cygwin-1.5.25-15
   libncurses8-5.5-3
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  binutils-20060817-1
-  cygport-0.3.9-1
+  autoconf2.5-2.63-1
+  binutils-20080624-2
+  cygport-0.4.2-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
-  libtool-2.2.2-2
+  libtool-2.2.6a-1
   make-3.81-1
   sed-4.1.5-2
 
@@ -28,29 +28,76 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack cdk-5.0.20060507-X-src.tar.bz2
+  unpack cdk-5.0.20081105-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./cdk-5.0.20060507-X.cygport all
+  cygport ./cdk-5.0.20081105-X.cygport all
 
 This will create:
-  /usr/src/cdk-5.0.20060507-X-src.tar.bz2
-  /usr/src/cdk-5.0.20060507-X.tar.bz2
-  /usr/src/libcdk-devel-5.0.20060507-X.tar.bz2
-  /usr/src/libcdk1-5.0.20060507-X.tar.bz2
+  /usr/src/cdk-5.0.20081105-X-src.tar.bz2
+  /usr/src/cdk-5.0.20081105-X.tar.bz2
+  /usr/src/libcdk-devel-5.0.20081105-X.tar.bz2
+  /usr/src/libcdk0-5.0.20081105-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(cdk)
-  /usr/share/doc/cdk-5.0.20060507/COPYING
-  /usr/share/doc/cdk-5.0.20060507/Changes
-  /usr/share/doc/cdk-5.0.20060507/INSTALL
-  /usr/share/doc/cdk-5.0.20060507/NOTES
-  /usr/share/doc/cdk-5.0.20060507/README
-  /usr/share/doc/cdk-5.0.20060507/TODO
+(libcdk0)
+  /usr/bin/cygcdk-0.dll
+  /usr/share/doc/cdk-5.0.20081105/COPYING
+  /usr/share/doc/cdk-5.0.20081105/Changes
+  /usr/share/doc/cdk-5.0.20081105/INSTALL
+  /usr/share/doc/cdk-5.0.20081105/NOTES
+  /usr/share/doc/cdk-5.0.20081105/README
+  /usr/share/doc/cdk-5.0.20081105/TODO
+
+(libcdk-devel)
+  /usr/bin/cdk5-config
+  /usr/include/cdk/alphalist.h
+  /usr/include/cdk/binding.h
+  /usr/include/cdk/button.h
+  /usr/include/cdk/buttonbox.h
+  /usr/include/cdk/calendar.h
+  /usr/include/cdk/cdk.h
+  /usr/include/cdk/cdk_compat.h
+  /usr/include/cdk/cdk_config.h
+  /usr/include/cdk/cdk_objs.h
+  /usr/include/cdk/cdk_params.h
+  /usr/include/cdk/cdk_util.h
+  /usr/include/cdk/cdk_version.h
+  /usr/include/cdk/cdkscreen.h
+  /usr/include/cdk/curdefs.h
+  /usr/include/cdk/dialog.h
+  /usr/include/cdk/draw.h
+  /usr/include/cdk/dscale.h
+  /usr/include/cdk/entry.h
+  /usr/include/cdk/fscale.h
+  /usr/include/cdk/fselect.h
+  /usr/include/cdk/fslider.h
+  /usr/include/cdk/graph.h
+  /usr/include/cdk/histogram.h
+  /usr/include/cdk/itemlist.h
+  /usr/include/cdk/label.h
+  /usr/include/cdk/marquee.h
+  /usr/include/cdk/matrix.h
+  /usr/include/cdk/mentry.h
+  /usr/include/cdk/menu.h
+  /usr/include/cdk/radio.h
+  /usr/include/cdk/scale.h
+  /usr/include/cdk/scroll.h
+  /usr/include/cdk/selection.h
+  /usr/include/cdk/slider.h
+  /usr/include/cdk/swindow.h
+  /usr/include/cdk/template.h
+  /usr/include/cdk/traverse.h
+  /usr/include/cdk/uscale.h
+  /usr/include/cdk/uslider.h
+  /usr/include/cdk/viewer.h
+  /usr/lib/libcdk.a
+  /usr/lib/libcdk.dll.a
+  /usr/lib/libcdk.la
   /usr/share/man/man3/Beep.3.gz
   /usr/share/man/man3/CDKallocStrings.3.gz
   /usr/share/man/man3/CDKcountStrings.3.gz
@@ -1030,57 +1077,12 @@ Files included in the binary packages:
   /usr/share/man/man3/writeChtype.3.gz
   /usr/share/man/man3/writeChtypeAttrib.3.gz
 
-(libcdk1)
-  /usr/bin/cygcdk-1.dll
-
-(libcdk-devel)
-  /usr/include/cdk/alphalist.h
-  /usr/include/cdk/binding.h
-  /usr/include/cdk/button.h
-  /usr/include/cdk/buttonbox.h
-  /usr/include/cdk/calendar.h
-  /usr/include/cdk/cdk.h
-  /usr/include/cdk/cdk_compat.h
-  /usr/include/cdk/cdk_config.h
-  /usr/include/cdk/cdk_objs.h
-  /usr/include/cdk/cdk_params.h
-  /usr/include/cdk/cdk_util.h
-  /usr/include/cdk/cdk_version.h
-  /usr/include/cdk/cdkscreen.h
-  /usr/include/cdk/curdefs.h
-  /usr/include/cdk/dialog.h
-  /usr/include/cdk/draw.h
-  /usr/include/cdk/dscale.h
-  /usr/include/cdk/entry.h
-  /usr/include/cdk/fscale.h
-  /usr/include/cdk/fselect.h
-  /usr/include/cdk/fslider.h
-  /usr/include/cdk/graph.h
-  /usr/include/cdk/histogram.h
-  /usr/include/cdk/itemlist.h
-  /usr/include/cdk/label.h
-  /usr/include/cdk/marquee.h
-  /usr/include/cdk/matrix.h
-  /usr/include/cdk/mentry.h
-  /usr/include/cdk/menu.h
-  /usr/include/cdk/radio.h
-  /usr/include/cdk/scale.h
-  /usr/include/cdk/scroll.h
-  /usr/include/cdk/selection.h
-  /usr/include/cdk/slider.h
-  /usr/include/cdk/swindow.h
-  /usr/include/cdk/template.h
-  /usr/include/cdk/traverse.h
-  /usr/include/cdk/uscale.h
-  /usr/include/cdk/uslider.h
-  /usr/include/cdk/viewer.h
-  /usr/lib/libcdk.a
-  /usr/lib/libcdk.dll.a
-  /usr/lib/libcdk.la
-
 ------------------
 
 Port Notes:
+
+----- version 5.0.20081105-1 -----
+Version bump.
 
 ----- version 5.0.20060507-1 -----
 Initial release for Cygwin.

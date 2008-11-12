@@ -1,0 +1,18 @@
+DESCRIPTION="Curses Development Kit widget library"
+HOMEPAGE="http://invisible-island.net/cdk/cdk.html"
+SRC_DIR="${PN}-${PV[1]}.${PV[2]}-${PV[3]}"
+SRC_URI="ftp://invisible-island.net/cdk/${SRC_DIR}.tgz"
+
+PATCH_URI="
+	20081105-autoheader.patch
+	20081105-no-undefined.patch
+"
+
+PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel"
+PKG_HINTS="setup lib devel"
+cdk_CONTENTS=	# empty
+libcdk0_CONTENTS="usr/bin/cygcdk-0.dll usr/share/doc/"
+libcdk_devel_CONTENTS="usr/bin/cdk5-config usr/include/ usr/lib/ usr/share/man/"
+
+CYGCONF_ARGS="--with-libtool --with-ncurses"
+MAKEOPTS+=" -j1 DOCUMENT_DIR=${D}/usr/share/doc/${P}"

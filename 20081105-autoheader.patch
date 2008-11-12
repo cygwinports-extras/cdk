@@ -1,0 +1,29 @@
+--- origsrc/cdk-5.0-20081105/configure.in	2008-11-01 11:41:18.000000000 -0500
++++ src/cdk-5.0-20081105/configure.in	2008-11-12 00:38:30.930449900 -0600
+@@ -2,7 +2,6 @@
+ dnl Process this file with autoconf to produce a configure script for CDK.
+ dnl
+ AC_INIT(include/cdk.h)
+-AC_CONFIG_HEADER(include/cdk_config.h:include/config.hin)
+ 
+ CF_CHECK_CACHE
+ CF_VERSION_INFO(cdk)
+@@ -148,6 +147,7 @@
+ AC_OUTPUT(
+ 	cdk-config
+ 	include/cdk_version.h:include/cdk_version.hin
++	include/cdk_config.h:include/config.hin
+ 	Makefile
+ 	cli/Makefile
+ 	examples/Makefile
+--- origsrc/cdk-5.0-20081105/include/config.hin	2000-01-17 08:48:19.000000000 -0600
++++ src/cdk-5.0-20081105/include/config.hin	2008-11-12 00:39:45.899199900 -0600
+@@ -5,8 +5,6 @@
+ #ifndef CDK_CONFIG_H
+ #define CDK_CONFIG_H 1
+ 
+-@DEFS@
+-
+ #if !defined(HAVE_LSTAT) && !defined(lstat)
+ #define lstat(f,b) stat(f,b)
+ #endif
