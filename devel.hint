@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin libcdk0 libncurses-devel
+requires: libcdk0 libncurses-devel
 external-source: cdk
 sdesc: "Curses widget library (libdevel)"
 ldesc: "Cdk stands for 'Curses Development Kit' and it currently 
