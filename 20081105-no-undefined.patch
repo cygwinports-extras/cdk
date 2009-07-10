@@ -5,7 +5,7 @@
  
  $(CDKLIB) :: $(OBJECTS)
 -	@echo creating $@; $(LIBTOOL_CREATE) $@ $(LIB_OBJECT)
-+	@echo creating $@; $(LIBTOOL_CREATE) $@ $(LIB_OBJECT) -no-undefined $(LIBS)
++	@echo creating $@; $(LIBTOOL_CREATE) $@ $(LIB_OBJECT) $(LDFLAGS) -no-undefined $(LIBS)
  	@$(RANLIB) $@
  
  cdkshlib $(CDKSHLIB) :: $(CDKSHOBJS)

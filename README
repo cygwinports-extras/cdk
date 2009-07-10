@@ -5,18 +5,19 @@ ready to use widgets which facilitate the speedy development of full
 screen curses programs.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  libncurses8-5.5-3
+  cygwin-1.7.0-50
+  libgcc1-4.3.2-2
+  libncurses9-5.7-14
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-1
+  autoconf2.5-2.63-10
   binutils-20080624-2
-  cygport-0.4.2-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  libtool-2.2.6a-1
-  make-3.81-1
+  cygport-0.9.7-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-13
+  make-3.81-2
   sed-4.1.5-2
 
 Canonical website:
@@ -28,17 +29,16 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack cdk-5.0.20081105-X-src.tar.bz2
+  unpack cdk-5.0.20090215-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./cdk-5.0.20081105-X.cygport all
+  cygport ./cdk-5.0.20090215-X.cygport all
 
 This will create:
-  /usr/src/cdk-5.0.20081105-X-src.tar.bz2
-  /usr/src/cdk-5.0.20081105-X.tar.bz2
-  /usr/src/libcdk-devel-5.0.20081105-X.tar.bz2
-  /usr/src/libcdk0-5.0.20081105-X.tar.bz2
+  /usr/src/cdk-5.0.20090215-X-src.tar.bz2
+  /usr/src/libcdk-devel-5.0.20090215-X.tar.bz2
+  /usr/src/libcdk0-5.0.20090215-X.tar.bz2
 
 -------------------------------------------
 
@@ -46,12 +46,10 @@ Files included in the binary packages:
 
 (libcdk0)
   /usr/bin/cygcdk-0.dll
-  /usr/share/doc/cdk-5.0.20081105/COPYING
-  /usr/share/doc/cdk-5.0.20081105/Changes
-  /usr/share/doc/cdk-5.0.20081105/INSTALL
-  /usr/share/doc/cdk-5.0.20081105/NOTES
-  /usr/share/doc/cdk-5.0.20081105/README
-  /usr/share/doc/cdk-5.0.20081105/TODO
+  /usr/share/doc/cdk/COPYING
+  /usr/share/doc/cdk/NOTES
+  /usr/share/doc/cdk/README
+  /usr/share/doc/cdk/TODO
 
 (libcdk-devel)
   /usr/bin/cdk5-config
@@ -621,6 +619,7 @@ Files included in the binary packages:
   /usr/share/man/man3/setCDKButton.3.gz
   /usr/share/man/man3/setCDKButtonBackgroundAttrib.3.gz
   /usr/share/man/man3/setCDKButtonBackgroundColor.3.gz
+  /usr/share/man/man3/setCDKButtonBox.3.gz
   /usr/share/man/man3/setCDKButtonBoxAttribute.3.gz
   /usr/share/man/man3/setCDKButtonHorizontalChar.3.gz
   /usr/share/man/man3/setCDKButtonLLChar.3.gz
@@ -1081,11 +1080,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 5.0.20081105-1 -----
-Version bump.
-
------ version 5.0.20060507-1 -----
-Initial release for Cygwin.
+----- version 5.0.20090215-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:

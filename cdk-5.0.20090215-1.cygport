@@ -9,10 +9,8 @@ PATCH_URI="
 "
 
 PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel"
-PKG_HINTS="setup lib devel"
-cdk_CONTENTS=	# empty
 libcdk0_CONTENTS="usr/bin/cygcdk-0.dll usr/share/doc/"
 libcdk_devel_CONTENTS="usr/bin/cdk5-config usr/include/ usr/lib/ usr/share/man/"
 
 CYGCONF_ARGS="--with-libtool --with-ncurses"
-MAKEOPTS+=" -j1 DOCUMENT_DIR=${D}/usr/share/doc/${P}"
+MAKEOPTS+=" -j1 DOCUMENT_DIR=${D}/usr/share/doc/${PN}"
