@@ -1,5 +1,5 @@
 category: Libs
-requires: libgcc1 libncurses10
+requires: libgcc1 libncursesw10
 external-source: cdk
 sdesc: "Curses widget library (runtime)"
 ldesc: "Cdk stands for 'Curses Development Kit' and it currently 
