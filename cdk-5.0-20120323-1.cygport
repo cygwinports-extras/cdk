@@ -1,14 +1,13 @@
 DESCRIPTION="Curses Development Kit widget library"
 HOMEPAGE="http://invisible-island.net/cdk/cdk.html"
-SRC_DIR="${PN}-${PV[1]}.${PV[2]}-${PV[3]}"
-SRC_URI="ftp://invisible-island.net/cdk/${SRC_DIR}.tgz"
+SRC_URI="ftp://invisible-island.net/cdk/${P}.tgz"
 
 PATCH_URI="
 	20081105-autoheader.patch
 	20081105-no-undefined.patch
 "
 
-PKG_NAMES="${PN} libcdk0 libcdk-devel libcdkw0 libcdkw-devel"
+PKG_NAMES="libcdk0 libcdk-devel libcdkw0 libcdkw-devel"
 libcdk0_CONTENTS="usr/bin/cygcdk-0.dll usr/share/doc/"
 libcdkw0_CONTENTS="usr/bin/cygcdkw-0.dll"
 libcdk_devel_CONTENTS="usr/bin/cdk5-config usr/include/ usr/lib/libcdk.* usr/share/man/"
