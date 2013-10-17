@@ -1,0 +1,39 @@
+NAME="cdk"
+VERSION=5.0-20120323
+RELEASE=2
+CATEGORY="Libs"
+SUMMARY="Curses Development Kit widget library"
+DESCRIPTION="Cdk stands for 'Curses Development Kit' and it currently contains
+21 ready to use widgets which facilitate the speedy development of full screen
+curses programs."
+HOMEPAGE="http://invisible-island.net/cdk/cdk.html"
+SRC_URI="ftp://invisible-island.net/cdk/cdk-${VERSION}.tgz"
+
+PATCH_URI="
+	20081105-autoheader.patch
+	20120323-autoconf253.patch
+"
+
+PKG_NAMES="libcdkw0 libcdk-devel libcdk-doc"
+libcdkw0_CONTENTS="usr/bin/cygcdkw-0.dll usr/share/doc/"
+libcdk_devel_REQUIRES="libncurses-devel"
+libcdk_devel_CONTENTS="usr/bin/cdk5-config usr/include/ usr/lib/"
+libcdk_doc_CATEGORY="Doc"
+libcdk_doc_CONTENTS="usr/share/man/man3/"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	cygconf --with-libtool --with-ncursesw cf_cv_ncurses_header=ncursesw/ncurses.h
+	cygmake -j1 LT_UNDEF="-no-undefined -shared"
+}
+
+src_install() {
+	cd ${B}
+	cyginstall DOCUMENT_DIR=${D}/usr/share/doc/${NAME}
+
+	dosym libcdkw.dll.a /usr/lib/libcdk.dll.a
+}
+
+KEEP_LA_FILES="none"
